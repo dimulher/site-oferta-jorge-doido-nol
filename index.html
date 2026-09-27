@@ -207,16 +207,31 @@
 
 <section class="section-dark" id="depoimentos">
   <div class="wrap testimonial">
-    <!-- TODO(Dede): trocar o bloco .video-slot por <video controls poster="..."><source src="..."></video> ou embed do depoimento -->
-    <div class="video-slot">
-      <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7Z"/></svg></div>
-      <span>Vídeo de depoimento em breve</span>
-    </div>
     <div class="testimonial-copy">
       <span class="eyebrow">Prova social</span>
       <h2>Quem já aplicou o método</h2>
-      <p>Resultados de quem estruturou a própria mentoria a partir do mesmo método que você vai levar do evento.</p>
+      <p>Participantes que receberam a placa de reconhecimento do Jorge Murilho contam o que essa jornada representou pra eles.</p>
       <p class="disclaimer">Depoimentos de participantes. Os resultados variam conforme a oferta, o mercado e a execução de cada pessoa, e não representam promessa de ganho.</p>
+    </div>
+    <div class="video-pair">
+      <figure class="video-card">
+        <div class="video-frame">
+          <video preload="none" playsinline controlslist="nodownload" poster="assets/video/depoimento-150k-capa.webp" aria-label="Depoimento de participante com a placa de reconhecimento 150K">
+            <source src="assets/video/depoimento-150k.mp4" type="video/mp4">
+          </video>
+          <button class="video-play" type="button" aria-label="Assistir depoimento"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7Z"/></svg></button>
+        </div>
+        <figcaption>Placa de reconhecimento 150K</figcaption>
+      </figure>
+      <figure class="video-card">
+        <div class="video-frame">
+          <video preload="none" playsinline controlslist="nodownload" poster="assets/video/depoimento-50k-capa.webp" aria-label="Depoimento de participante com a placa de reconhecimento 50K">
+            <source src="assets/video/depoimento-50k.mp4" type="video/mp4">
+          </video>
+          <button class="video-play" type="button" aria-label="Assistir depoimento"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7Z"/></svg></button>
+        </div>
+        <figcaption>Placa de reconhecimento 50K</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -317,18 +332,6 @@
 <div class="sticky-cta">
   <strong>Livro + ingresso por R$97</strong>
   <a href="#oferta" class="btn btn-gold">Garantir vaga</a>
-</div>
-
-<div class="popup-overlay" id="popup">
-  <div class="popup-card">
-    <button class="popup-close" id="popup-close" aria-label="Fechar">×</button>
-    <span class="eyebrow">Oferta única nesta visita</span>
-    <h3>Antes de você sair...</h3>
-    <p class="desc">Você ainda não garantiu sua vaga pro evento de 02/10. Consegue o livro + ingresso por um valor especial agora:</p>
-    <div class="price-row"><span class="popup-old">R$97</span><span class="curr">R$</span><span class="val">67</span></div>
-    <!-- TODO(Dede): trocar href="#" pelo link real do checkout com o valor promocional de R$67 -->
-    <a href="#oferta" class="btn btn-gold" id="popup-cta" style="width:100%">Quero minha vaga por R$67</a>
-  </div>
 </div>
 
 <script src="script.js"></script>

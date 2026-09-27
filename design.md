@@ -14,7 +14,7 @@
 | Texto | `#E5E6E6` | corpo sobre fundo escuro |
 | Texto suave | `#6F6866` | legendas/muted, texto sobre fundo claro |
 | Primária | `#E2C28A` | marca, dourado — títulos de destaque, ícones, bordas |
-| Destaque | `#E2C28A` | CTAs (botão de compra, popup de oferta) |
+| Destaque | `#E2C28A` | CTAs (botão de compra) |
 | Borda | `#6F6866` | divisórias, hairlines em cards |
 
 Texto sobre fundo claro (`#E5E6E6`) usa `#383028` (marrom escuro quase preto) em vez de `#E5E6E6`.
@@ -40,7 +40,7 @@ Texto sobre fundo claro (`#E5E6E6`) usa `#383028` (marrom escuro quase preto) em
 - **Hero:** fundo navy, selo/medalha dourado (`5. Logo 3D e Fundo/Logo.png`) como elemento de autoridade, headline Nord Black centralizada, contagem regressiva até 02/10 9h, CTA dourado abaixo da dobra
 
 ## 6. Motion / Animação
-- **Estilo:** sutil — fade/slide on scroll, contagem regressiva viva, popup com scale-in suave aos 20s de permanência na página
+- **Estilo:** sutil — fade/slide on scroll, contagem regressiva com flip, título palavra por palavra, cards e frase enchendo de dourado conforme a rolagem
 - **Reduced-motion:** ignorar `prefers-reduced-motion` — Dede quer as animações tocando mesmo com movimento reduzido ligado no Windows
 
 ## 7. Imagens & Assets (para gerar com IA)
@@ -50,7 +50,7 @@ Texto sobre fundo claro (`#E5E6E6`) usa `#383028` (marrom escuro quase preto) em
 
 ## 8. Regras (Do / Don't)
 - ✅ Contraste alto navy + dourado em toda a página — é a marca, não diluir com outras cores
-- ✅ CTA sempre visível: preço R$97 âncora, popup aos 20s revela oferta única R$67
+- ✅ CTA sempre visível: preço fixo de R$97 (sem popup de desconto, decisão do Dede em 26/09)
 - ✅ Copy 100% alinhada ao método do livro (8 capítulos = pilares da mentoria)
 - ❌ Sem emoji/ícones decorativos no copy de venda (padrão premium do Dede)
 - ❌ Sem cores fora da paleta de 5 tons acima

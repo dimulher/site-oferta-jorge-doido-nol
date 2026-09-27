@@ -126,32 +126,66 @@
     updateAgenda();
   }
 
-  // popup after 20s on page, once per session
-  var popup = document.getElementById('popup');
-  var popupClose = document.getElementById('popup-close');
-
-  function showPopup(){
-    if (sessionStorage.getItem('nol_popup_shown')) return;
-    popup.classList.add('show');
-    sessionStorage.setItem('nol_popup_shown', '1');
+  // gold that builds up with scroll: cards light up, closing line fills word by word
+  var goldEls = Array.prototype.slice.call(document.querySelectorAll('.pain, .pillar'));
+  var fillBox = document.querySelector('.pain-close');
+  var fillWords = [];
+  if (fillBox){
+    var text = fillBox.textContent.trim();
+    fillBox.textContent = '';
+    fillBox.setAttribute('aria-label', text);
+    text.split(/\s+/).forEach(function(word, i, all){
+      var s = document.createElement('span');
+      s.className = 'gw';
+      s.textContent = word;
+      fillBox.appendChild(s);
+      if (i < all.length - 1) fillBox.appendChild(document.createTextNode(' '));
+      fillWords.push(s);
+    });
   }
-  function hidePopup(){
-    popup.classList.remove('show');
-  }
-
-  try {
-    if (!sessionStorage.getItem('nol_popup_shown')){
-      setTimeout(showPopup, 20000);
+  var goldQueued = false;
+  var updateGold = function(){
+    goldQueued = false;
+    var vh = window.innerHeight;
+    goldEls.forEach(function(el){
+      var r = el.getBoundingClientRect();
+      var p = Math.max(0, Math.min(1, (vh * 0.94 - (r.top + r.height / 2)) / (vh * 0.36)));
+      el.style.setProperty('--p', p.toFixed(3));
+      el.classList.toggle('lit', p >= 0.6);
+    });
+    if (fillBox){
+      var fr = fillBox.getBoundingClientRect();
+      var fp = Math.max(0, Math.min(1, (vh * 0.92 - fr.top) / (vh * 0.40)));
+      fillWords.forEach(function(w, i){
+        w.classList.toggle('on', i < fp * fillWords.length);
+      });
     }
-  } catch(e){
-    setTimeout(showPopup, 20000);
-  }
+  };
+  window.addEventListener('scroll', function(){
+    if (!goldQueued){ goldQueued = true; requestAnimationFrame(updateGold); }
+  }, { passive: true });
+  window.addEventListener('resize', updateGold);
+  updateGold();
 
-  popupClose.addEventListener('click', hidePopup);
-  popup.addEventListener('click', function(e){
-    if (e.target === popup) hidePopup();
+  // testimonial videos: gold play button, native controls after play, one at a time
+  var videoFrames = Array.prototype.slice.call(document.querySelectorAll('.video-frame'));
+  videoFrames.forEach(function(frame){
+    var video = frame.querySelector('video');
+    var btn = frame.querySelector('.video-play');
+    btn.addEventListener('click', function(){
+      videoFrames.forEach(function(other){
+        var v = other.querySelector('video');
+        if (v !== video) v.pause();
+      });
+      video.setAttribute('controls', '');
+      video.play();
+    });
+    video.addEventListener('play', function(){ frame.classList.add('playing'); });
+    video.addEventListener('pause', function(){
+      if (video.ended || video.currentTime === 0) frame.classList.remove('playing');
+    });
+    video.addEventListener('ended', function(){ frame.classList.remove('playing'); });
   });
-  document.getElementById('popup-cta').addEventListener('click', hidePopup);
 
   // reveal on scroll
   var revealTargets = document.querySelectorAll('.pillar, .pain, .pull, .quote, .authority, .event-grid, .agenda-row, .testimonial, .offer-card');
