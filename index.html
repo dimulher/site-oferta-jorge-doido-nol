@@ -11,6 +11,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <noscript><style>.motion .m-up,.motion .eyebrow,.motion .book-enter,.motion .tag-wrap,.motion .glow-core,.motion .w2 > *,.motion .divider > *,.motion .s4{opacity:1!important}</style></noscript>
+<!-- Meta Pixel: PIXEL-EBOOK (606158038601237), escolhido pelo Dede em 27/09 por já ter histórico de compra -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '606158038601237');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=606158038601237&ev=PageView&noscript=1"></noscript>
 </head>
 <body>
 <div class="grain"></div>
@@ -315,7 +329,7 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Dia completo de evento presencial, das 9h às 18h, com outros mentores em formação</li>
       </ul>
       <!-- TODO(Dede): trocar href="#" pelo link real do checkout (Eduzz / Mercado Pago) -->
-      <a href="#" class="btn btn-gold">Garantir minha vaga</a>
+      <a href="#" class="btn btn-gold js-checkout-cta">Garantir minha vaga</a>
 
       <div class="bump">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2v20M2 12h20"/></svg>
@@ -380,7 +394,7 @@
     <h2>Você vai aplicar o passo a passo ou continuar comprando curso sem direção?</h2>
     <p>Sua mentoria estruturada começa no dia 02 de outubro. Livro digital + ingresso do evento presencial por R$97, sexta-feira, das 9h às 18h, na Barra da Tijuca.</p>
     <!-- TODO(Dede): trocar href pelo link real do checkout (Eduzz / Mercado Pago) -->
-    <a href="#oferta" class="btn btn-gold">Garantir minha vaga por R$97</a>
+    <a href="#oferta" class="btn btn-gold js-checkout-cta">Garantir minha vaga por R$97</a>
     <small>Vagas limitadas. Evento 100% presencial.</small>
   </div>
 </section>

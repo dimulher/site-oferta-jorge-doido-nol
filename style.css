@@ -479,7 +479,8 @@ footer .addr{font-size:13px;color:rgba(243,243,241,.62);text-align:right}
   font-size:clamp(70px, min(17.5vh, 33vw), 190px);line-height:1;letter-spacing:0;text-transform:uppercase;text-align:left;
 }
 .hero.motion{padding:112px 0 64px}
-.hero.motion .wrap{width:100%}
+.hero.motion .wrap{width:100%;align-items:start}
+.hero.motion .book-stage{margin-top:-6px}
 .lockup .w{position:relative;display:block;height:.9em;line-height:.9em;white-space:nowrap}
 .lockup .base,.lockup .sheen{position:absolute;left:0;top:0;height:.9em;line-height:.9em;white-space:nowrap}
 .lockup .ch{
@@ -575,15 +576,15 @@ footer .addr{font-size:13px;color:rgba(243,243,241,.62);text-align:right}
 @keyframes dustIn{from{opacity:0}to{opacity:1}}
 
 @media (max-width:920px){
-  .hero.motion{padding:92px 0 36px}
+  .hero.motion{padding:80px 0 24px}
   .hero.motion .wrap{display:flex;flex-direction:column;align-items:flex-start;gap:0}
   .hero-copy{display:contents}
-  .hero-copy .eyebrow{order:1;font-size:min(11px,2.9vw);letter-spacing:.16em;margin-bottom:12px}
-  .hero h1.lockup{order:2;margin-bottom:6px}
+  .hero-copy .eyebrow{order:1;font-size:min(11px,2.9vw);letter-spacing:.16em;margin-bottom:8px}
+  .hero h1.lockup{order:2;margin-bottom:18px}
   .book-stage{order:3;align-self:center;display:flex;flex-direction:column;align-items:center;margin:0 0 4px;transform:none}
-  .hero-sub{order:4;margin-top:18px}.event-chip{order:5}.hero-copy > .countdown{order:6}.hero-copy > .cta-wrap{order:7}.hero-cta-note{order:8}
-  .book{width:min(250px,64vw)}
-  .px.tags{position:static!important;inset:auto!important;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:12px 0 4px;transform:none!important}
+  .hero-sub{order:4;margin-top:10px;margin-bottom:14px}.event-chip{order:5;margin-bottom:14px;padding:14px 18px}.hero-copy > .countdown{order:6;margin-bottom:16px}.hero-copy > .cta-wrap{order:7}.hero-cta-note{order:8;margin-top:10px}
+  .book{width:min(215px,56vw)}
+  .px.tags{position:static!important;inset:auto!important;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:10px 0 0;transform:none!important}
   .tag-wrap{position:static}
   .tag{font-size:11px;padding:8px 12px}
   .glow-core{width:420px;height:420px;margin:-210px 0 0 -210px}

@@ -314,6 +314,13 @@
     }, { threshold: 0.05 }).observe(track);
   })();
 
+  // Meta Pixel: intenção real de compra (botões que vão virar o link do checkout)
+  document.querySelectorAll('.js-checkout-cta').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if (typeof fbq === 'function') fbq('track', 'InitiateCheckout', { value: 97, currency: 'BRL' });
+    });
+  });
+
   // reveal on scroll
   var revealTargets = document.querySelectorAll('.pillar, .pain, .pull, .quote, .authority, .event-grid, .agenda-row, .testimonial, .offer-card');
   var io = new IntersectionObserver(function(entries){
