@@ -67,8 +67,8 @@
     })();
   })();
 
-  // flip countdown to 2026-10-02 09:00 (America/Sao_Paulo, UTC-03:00)
-  var target = new Date('2026-10-02T09:00:00-03:00').getTime();
+  // flip countdown to 2026-11-21 09:00 (America/Sao_Paulo, UTC-03:00)
+  var target = new Date('2026-11-21T09:00:00-03:00').getTime();
 
   function pad(n){ return String(n).padStart(2, '0'); }
 
