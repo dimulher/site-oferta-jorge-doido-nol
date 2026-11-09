@@ -59,7 +59,8 @@ a{color:inherit}
   font-size:12px;letter-spacing:.28em;text-transform:uppercase;
   color:var(--gold);font-weight:700;
 }
-.eyebrow::before{content:'';width:22px;height:1px;background:var(--gold)}
+/* sem traco decorativo antes do titulo pequeno (parecia travessao) */
+.eyebrow::before{display:none}
 .eyebrow.no-line::before{display:none}
 
 h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.01em;font-family:'Fraunces',Georgia,serif}
@@ -612,3 +613,15 @@ footer .addr{font-size:13px;color:rgba(243,243,241,.62);text-align:right}
   .strip span{padding:0 20px;font-size:11.5px;letter-spacing:.28em}
   .hero.motion::after{height:120px}
 }
+
+/* VSL logo apos a abertura */
+.vsl{padding:72px 0 80px;background:var(--bg-2)}
+.vsl-head{max-width:760px;margin:0 auto 32px;text-align:center}
+.vsl-head .eyebrow{justify-content:center;margin-bottom:16px}
+.vsl-frame{position:relative;max-width:960px;margin:0 auto;aspect-ratio:16/9;border:1px solid rgba(212,162,63,.45);box-shadow:0 30px 80px rgba(0,0,0,.55);background:#000}
+.vsl-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vsl-alt{text-align:center;margin:14px 0 0;font-size:13px;opacity:.6}
+.vsl-alt a{color:inherit;text-decoration:underline}
+.vsl-cta{text-align:center;margin-top:28px}
+.vsl-cta p{margin:14px 0 0;font-size:14px;opacity:.7}
+@media (max-width:640px){.vsl{padding:48px 0 56px}.vsl-frame{margin:0 -24px;max-width:none;border-left:0;border-right:0}}
