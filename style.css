@@ -619,9 +619,54 @@ footer .addr{font-size:13px;color:rgba(243,243,241,.62);text-align:right}
 .vsl-head{max-width:760px;margin:0 auto 32px;text-align:center}
 .vsl-head .eyebrow{justify-content:center;margin-bottom:16px}
 .vsl-frame{position:relative;max-width:960px;margin:0 auto;aspect-ratio:16/9;border:1px solid rgba(212,162,63,.45);box-shadow:0 30px 80px rgba(0,0,0,.55);background:#000}
-.vsl-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vsl-frame{border-radius:14px;overflow:hidden}
+.vsl-frame .video-play{width:84px;height:84px;margin:-42px 0 0 -42px}
+.vsl-frame .video-play svg{width:30px;height:30px;margin-left:4px}
 .vsl-alt{text-align:center;margin:14px 0 0;font-size:13px;opacity:.6}
 .vsl-alt a{color:inherit;text-decoration:underline}
 .vsl-cta{text-align:center;margin-top:28px}
 .vsl-cta p{margin:14px 0 0;font-size:14px;opacity:.7}
-@media (max-width:640px){.vsl{padding:48px 0 56px}.vsl-frame{margin:0 -24px;max-width:none;border-left:0;border-right:0}}
+@media (max-width:640px){.vsl{padding:48px 0 56px}.vsl-frame{margin:0;max-width:none;border-radius:12px}.vsl-frame .video-play{width:68px;height:68px;margin:-34px 0 0 -34px}}
+
+/* ===== HERO 2 (arte gerada no Flow + recorte; palavra gigante entre fundo e Jorge) ===== */
+.hero2{position:relative;min-height:max(100svh,720px);overflow:hidden;background:#0b0a08;isolation:isolate;display:flex;align-items:center}
+.h2-stage{position:absolute;right:0;bottom:0;height:100%;aspect-ratio:2200/1227;z-index:1;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 24%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 24%)}
+.h2-stage picture{display:contents}
+.h2-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.h2-cut{z-index:3}
+.h2-glow{display:none}
+.hero2::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 40% 50% at 78% 40%,rgba(212,162,63,.22),transparent 70%)}
+.h2-vignette{position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:linear-gradient(90deg,rgba(7,7,6,.9) 0%,rgba(7,7,6,.55) 30%,transparent 50%),linear-gradient(0deg,#0b0a08 0%,transparent 14%)}
+.h2-wrap{position:relative;z-index:4;width:100%;display:flex;flex-direction:column;justify-content:center;gap:34px;align-items:flex-start;padding-top:96px;padding-bottom:56px}
+.h2-copy .eyebrow{margin-bottom:20px;text-shadow:0 2px 14px rgba(0,0,0,.9)}
+.h2-copy h1{margin:0 0 20px;font-family:'Estrutura Display','Bebas Neue',Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(46px,5.6vw,84px);line-height:.98;letter-spacing:.005em}
+.h2-copy h1 em{font-style:normal;color:var(--gold-bright)}
+.h2-sub{font-size:17px;line-height:1.55;color:var(--cream);opacity:.88;margin:0 0 28px;max-width:470px}
+.h2-sub strong{color:var(--gold-bright);font-weight:600}
+.h2-side{display:flex;flex-direction:row;align-items:center;gap:30px;padding-top:26px;border-top:1px solid rgba(212,162,63,.28)}
+.h2-date{display:flex;flex-direction:column;align-items:flex-start;line-height:.85}
+.h2-date span{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+.h2-date b{font-family:'Estrutura Display','Bebas Neue',Impact,sans-serif;font-weight:400;font-size:clamp(52px,5vw,76px);color:var(--cream);text-shadow:0 6px 40px rgba(0,0,0,.6)}
+.h2-where{margin:0;font-size:14px;line-height:1.5;color:var(--cream);opacity:.8}
+.h2-side .countdown{margin:0}
+.h2-book{width:76px;height:auto;flex:none;border-radius:3px;box-shadow:0 14px 34px rgba(0,0,0,.65),0 0 0 1px rgba(212,162,63,.25)}
+.h2-info{display:flex;flex-direction:column;gap:8px}
+.h2-info .h2-where{font-size:13px;max-width:150px}
+.h2-copy{max-width:540px}
+@media (max-width:900px){
+  .hero2{display:block;min-height:0}
+  .hero2::before{background:radial-gradient(ellipse 80% 30% at 60% 24%,rgba(212,162,63,.25),transparent 70%)}
+    .h2-stage{position:relative;right:auto;bottom:auto;height:auto;width:100%;aspect-ratio:1400/1875;margin-top:56px;
+    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 70%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 70%,transparent 100%);-webkit-mask-composite:source-over;mask-composite:add}
+  .h2-vignette{background:linear-gradient(0deg,#0b0a08 0%,#0b0a08 3%,transparent 28%)}
+  .h2-wrap{display:flex;flex-direction:column;gap:20px;padding-top:0;margin-top:-44vw;padding-bottom:40px;align-items:stretch}
+  .h2-copy .eyebrow{font-size:10.5px;letter-spacing:.14em;margin-bottom:14px}
+  .h2-copy h1{font-size:clamp(40px,12.4vw,64px);max-width:11ch;text-shadow:0 4px 30px rgba(0,0,0,.85)}
+  .h2-sub{font-size:16px;max-width:none}
+  .h2-side{flex-wrap:wrap;justify-content:flex-start;gap:16px 18px;padding-top:18px}.h2-book{width:58px}.h2-info .h2-where{max-width:none}
+  .h2-date{align-items:flex-start}.h2-date b{font-size:56px}
+  .h2-where{order:3}
+}
